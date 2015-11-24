@@ -1,0 +1,33 @@
+**** Instruction ****
+(Programme réalisé en 2014-2015)
+En cas de problèmes, vous pouvez me contacter à l'adresse mail suivante : sylvain.rousseau93@gmail.com
+
+*** Programme tool : ***
+Le programme tool est constitué de 3 différentes fenêtres.
+La navigation se fait via les touches 'a' (avancer d'une étape) et 'z' (reculer d'une étape)
+La touche 'q' permet de quitter le programme
+Il y a deux fenêtres de configuration des variables, et une fenêtre de validation.
+La première fenêtre permet de configurer la détection de contours, on s'assurera que le carré et le triangle de la balise dans différentes configurations, est bien entièrement visibles (contours nets et sans trous).
+La seconde fenêtre permet de configurer les aires minimales et maximales des triangles et carrés des balises à l'image.
+La dernière fenêtre permet de valiser le bon fonctionnement de l'algorithme
+En quittant l'outil de configuration un fichier data est généré à l'emplacement de l'executable
+il conviendra de déplacer ce fichier data à l'emplacement de l'executable qui servira pour la détection "réelle"
+
+La compilation du programme nécessite que OpenCV soit installé sur la machine. L'installation de la librairie sur un raspberry pi peut être TRÈS TRÈS longue (personnellement cela m'a pris plusieurs heures (6)). Il existe des solutions pour faire de la cross-compilation ce qui permettra d'éviter d'avoir à installer la librairie sur le raspberry pi (http://docs.opencv.org/doc/tutorials/introduction/crosscompilation/arm_crosscompile_with_cmake.html)
+
+Si on souhaite changer de webcam (s'il y a plusieurs webcams branchées à un ordinateur), on remplacera la valeur dans la déclaration ligne 39 :
+cv::VideoCapture capture(1); (typiquement 1 pour avoir la webcam branché a un ordinateur portable et non la webcam intégrée)
+
+*** Programme utilitaire (tool/utilitaire) ***
+Un exemple d'utilisation du programme est fait dans le main.
+c'est le seul des deux programmes à utiliser pour la compétition.
+
+
+*** compilation ***
+(avec OpenCV installé)
+cd build
+cmake .
+make
+./detection
+
+Bonne chance :)
